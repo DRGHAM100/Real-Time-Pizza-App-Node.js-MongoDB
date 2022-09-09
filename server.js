@@ -9,6 +9,9 @@ app.get('/',(req,res)=>{
     res.render('home');
 });
 
+app.use(express.static('public'));
+
+
 app.use(expressLayouts);
 app.set('views',path.join(__dirname,'resources/views'));
 app.set('view engine','ejs');
