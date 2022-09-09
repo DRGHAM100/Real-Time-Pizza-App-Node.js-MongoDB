@@ -40,3 +40,26 @@ section.hero{
         color: $pure;
     }
 }
+
+.btn-primary{
+    background-color: $primary !important;
+    transition: $smooth;
+    &:hover{
+        background-color: $primary-hover;
+    }
+}
+
+
+section.cart{
+    background-color: $secondary;
+
+    .amount{
+        color: $primary;
+    }
+}
+
+.forget-password{
+    color: $primary;
+    text-decoration: none;
+}
+
