@@ -2,12 +2,15 @@
     <div class="flex flex-col items-center justify-center mx-auto">
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <form class="space-y-4 md:space-y-6" action="#">
+                <% if(messages.error){ %>
+                 <span class="text-red-600 text-sm"> <%= messages.error %> </span>
+                <% } %>
+                <form action="/register" method="POST" class="space-y-4 md:space-y-6">
                     <div>
-                        <input type="text" name="name" id="name" class="border border-gray-300 text-gray-900 rounded-lg  w-full p-2.5" placeholder="Name" required="">
+                        <input type="text" name="name" id="name" value="<%= messages.name %>" class="border border-gray-300 text-gray-900 rounded-lg  w-full p-2.5" placeholder="Name" required="">
                     </div>
                     <div>
-                        <input type="email" name="email" id="email" class="border border-gray-300 text-gray-900 rounded-lg  w-full p-2.5" placeholder="Email" required="">
+                        <input type="email" name="email" id="email" value="<%= messages.email %>" class="border border-gray-300 text-gray-900 rounded-lg  w-full p-2.5" placeholder="Email" required="">
                     </div>
                     <div>
                         <input type="password" name="password" id="password" placeholder="Password" class="border border-gray-300 text-gray-900 rounded-lg  w-full p-2.5" required="">
