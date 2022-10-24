@@ -1,7 +1,8 @@
 import axios from 'axios';
 import moment from 'moment';
+import toastr from 'toastr';
 
-function initAdmin(){
+function initAdmin(socket){
     const orderTableBody = document.querySelector('#orderTableBody');
     let orders = []
     let markup
@@ -78,6 +79,14 @@ function initAdmin(){
         `
         }).join('');
     }
+
+    // Socket
+    socket.on('orderPlaced', (order) => {
+        toastr.success('New order!');
+        orders.unshift(order)
+        orderTableBody.innerHTML = ''
+        orderTableBody.innerHTML = generateMarkup(orders)
+    });
 
 }
 
