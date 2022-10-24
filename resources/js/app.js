@@ -77,7 +77,6 @@ if(adminAreaPath.includes('admin')) {
     socket.emit('join', 'adminRoom')
 }
 
-
 socket.on('orderUpdated', (data) => {
     const updatedOrder = { ...order }
     updatedOrder.updatedAt = moment().format()

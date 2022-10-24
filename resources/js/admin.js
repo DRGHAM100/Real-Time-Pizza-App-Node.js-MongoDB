@@ -81,12 +81,12 @@ function initAdmin(socket){
     }
 
     // Socket
-    socket.on('orderPlaced', (order) => {
-        toastr.success('New order!');
-        orders.unshift(order)
-        orderTableBody.innerHTML = ''
-        orderTableBody.innerHTML = generateMarkup(orders)
-    });
+    // socket.on('orderPlaced', (order) => {
+    //     toastr.success('New order!');
+    //     orders.unshift(order)
+    //     orderTableBody.innerHTML = ''
+    //     orderTableBody.innerHTML = generateMarkup(orders)
+    // });
 
 }
 

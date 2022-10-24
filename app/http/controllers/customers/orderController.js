@@ -31,7 +31,7 @@ function orderController(){
     
                     //Emit
                     const eventEmitter = req.app.get('eventEmitter');
-                    eventEmitter.emit('orderPlaced', placedOrder);
+                    eventEmitter.emit('orderPlaced', placedOrder); 
     
                     return res.redirect('/customer/orders');
                 });
